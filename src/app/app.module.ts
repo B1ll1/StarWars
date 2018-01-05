@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { CharactersListModule } from './components/characters-list/characters-list.module';
+import { StarshipsListModule } from './components/starships-list/starships-list.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CharactersListModule,
+    StarshipsListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
