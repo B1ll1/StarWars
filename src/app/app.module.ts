@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CharactersListModule } from './components/characters-list/characters-list.module';
 import { StarshipsListModule } from './components/starships-list/starships-list.module';
+import { StarshipDetailComponent } from './components/starship-detail/starship-detail.component';
 
 @NgModule({
   declarations: [

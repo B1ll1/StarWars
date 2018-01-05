@@ -7,7 +7,7 @@
         <li class="list-group-item"><b>Gender: </b>{{currentCharacter.gender}}</li>
       </ul>
       <ul class="list-group" *ngIf="loadingCharacterInfo">
-          <li class="list-group-item">Carregando...</li>
+          <li class="list-group-item">Loading...</li>
       </ul>
   </div>
 </div>
@@ -16,18 +16,18 @@
     <div class="panel-heading">Character Species Info</div>
     <div class="panel-body">
         <ul class="list-group" *ngIf="!loadingSpecieInfo">
-          <li class="list-group-item"><b>Name: </b><span >{{currentSpecie.name}}</span></li>
-          <li class="list-group-item"><b>Classification: </b>{{currentSpecie.classification}}</li>
-          <li class="list-group-item"><b>Designation: </b>{{currentSpecie.designation}}</li>
-          <li class="list-group-item"><b>Average Height: </b>{{currentSpecie.average_height}}</li>
-          <li class="list-group-item"><b>Skin Colors: </b>{{currentSpecie.skin_colors}}</li>
-          <li class="list-group-item"><b>Hair Colors: </b>{{currentSpecie.hair_colors}}</li>
-          <li class="list-group-item"><b>Eye Colors: </b>{{currentSpecie.eye_colors}}</li>
-          <li class="list-group-item"><b>Average Lifespan: </b>{{currentSpecie.average_lifespan}}</li>
-          <li class="list-group-item"><b>Language: </b>{{currentSpecie.language}}</li>
+            <li class="list-group-item"><b>Name: </b><span >{{currentSpecie.name}}</span></li>
+            <li class="list-group-item"><b>Classification: </b>{{currentSpecie.classification}}</li>
+            <li class="list-group-item"><b>Designation: </b>{{currentSpecie.designation}}</li>
+            <li class="list-group-item"><b>Average Height: </b>{{currentSpecie.average_height}}</li>
+            <li class="list-group-item"><b>Skin Colors: </b>{{currentSpecie.skin_colors}}</li>
+            <li class="list-group-item"><b>Hair Colors: </b>{{currentSpecie.hair_colors}}</li>
+            <li class="list-group-item"><b>Eye Colors: </b>{{currentSpecie.eye_colors}}</li>
+            <li class="list-group-item"><b>Average Lifespan: </b>{{currentSpecie.average_lifespan}}</li>
+            <li class="list-group-item"><b>Language: </b>{{currentSpecie.language}}</li>
         </ul>
         <ul class="list-group" *ngIf="loadingSpecieInfo">
-            <li class="list-group-item">Carregando...</li>
+            <li class="list-group-item">Loading...</li>
         </ul>
     </div>
-  </div>
+</div>

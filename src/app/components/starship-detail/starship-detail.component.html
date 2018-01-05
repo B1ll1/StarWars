@@ -1,0 +1,40 @@
+<div class="panel panel-info">
+  <div class="panel-heading">Starship Info</div>
+  <div class="panel-body">
+      <ul class="list-group" *ngIf="!loadingStarshipInfo">
+        <li class="list-group-item"><b>Name: </b>{{currentStarship.name}}</li>
+        <li class="list-group-item"><b>Length: </b>{{currentStarship.length}}</li>
+        <li class="list-group-item"><b>Cargo Capacity: </b>{{currentStarship.cargo_capacity}}</li>
+      </ul>
+      <ul class="list-group" *ngIf="loadingStarshipInfo">
+          <li class="list-group-item">Carregando...</li>
+      </ul>
+  </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">Starship Pilots Info</div>
+    <div class="panel-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Height</th>
+            <th>Gender</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="!loadingPilotsInfo">
+          <tr *ngFor="let pilot of currentPilots">
+            <td>{{pilot.name}}</td>
+            <td>{{pilot.height}}</td>
+            <td>{{pilot.gender}}</td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="loadingPilotsInfo">
+          <tr>
+            Loading...
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

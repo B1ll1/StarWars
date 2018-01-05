@@ -5,7 +5,7 @@ import { StarshipsService } from '../../services/starships.service';
 import { SharedPaginationModule } from '../../shared-pagination/shared-pagination.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
+import { StarshipDetailComponent } from '../starship-detail/starship-detail.component';
 
 @NgModule({
   imports: [
@@ -16,7 +16,8 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [StarshipsListComponent],
   declarations: [
-    StarshipsListComponent
+    StarshipsListComponent,
+    StarshipDetailComponent
   ],
   providers: [
     StarshipsService

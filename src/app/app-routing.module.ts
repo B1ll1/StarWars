@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { CharactersListComponent } from './components/characters-list/characters-list.component';
 import { StarshipsListComponent } from './components/starships-list/starships-list.component';
 import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
+import { StarshipDetailComponent } from './components/starship-detail/starship-detail.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'characters/:id',
     component: CharacterDetailComponent
+  },
+  {
+    path: 'starships/:id',
+    component: StarshipDetailComponent
   }
 ];
 
