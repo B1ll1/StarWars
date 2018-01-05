@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  current:string = 'Home';
+
+  changeCurrent(current){
+    this.current = current;
+  }
 }

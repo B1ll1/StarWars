@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Characters List</div>
+  <div class="panel-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Height</th>
+            <th>Gender</th>
+            <th>#</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let character of characters">
+            <td>{{character.name}}</td>
+            <td>{{character.height}}</td>
+            <td>{{character.gender}}</td>
+            <td><a [routerLink]="'/characters/' + character.id"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  <div class="d-flex justify-content-center">
+    <pagination
+      [next]="next"
+      [previous]="previous"
+      (goNext)="onNext()"
+      (goPrev)="onPrev()"
+    ></pagination>
+  </div>
+</div>
+ 

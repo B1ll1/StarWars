@@ -1,0 +1,14 @@
+<nav>
+  <ul class="pager">
+    <li>
+      <button class="btn btn-default" (click)="onPrev()" aria-label="Previous" [disabled]="previous == null">
+        <span aria-hidden="true" class="glyphicon glyphicon-triangle-left"></span>
+      </button>
+    </li>
+    <li>
+      <button class="btn btn-default" (click)="onNext(true)" aria-label="Next" [disabled]="next == null">
+        <span aria-hidden="true" class="glyphicon glyphicon-triangle-right"></span>
+      </button>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Starships List</div>
+  <div class="panel-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Length</th>
+            <th>Cargo Capacity</th>
+            <th>#</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let starship of starships">
+            <td>{{starship.name}}</td>
+            <td>{{starship.length}}</td>
+            <td>{{starship.cargo_capacity}}</td>
+            <td><a><span class="glyphicon glyphicon-eye-open"></span></a></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  <div class="d-flex justify-content-center">
+    <pagination 
+      [next]="next"
+      [previous]="previous"
+      (goNext)="onNext()"
+      (goPrev)="onPrev()"
+    ></pagination>
+  </div>
+</div>
