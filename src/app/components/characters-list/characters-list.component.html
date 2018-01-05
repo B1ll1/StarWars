@@ -4,7 +4,7 @@
       <table class="table">
         <thead>
           <tr>
-            <th>Name</th>
+            <th>Name <span [ngClass]="{'glyphicon':glyph==true,'glyphicon-sort-by-alphabet-alt':nameOrder==true,'glyphicon-sort-by-alphabet':nameOrder==false}" (click)="changeOrderByName()"></span></th>
             <th>Height</th>
             <th>Gender</th>
             <th>#</th>

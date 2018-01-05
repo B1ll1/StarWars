@@ -24,7 +24,7 @@
           </tr>
         </thead>
         <tbody *ngIf="!loadingPilotsInfo">
-          <tr *ngFor="let pilot of currentPilots">
+          <tr *ngFor="let pilot of currentPilots" [routerLink]="'/characters/' + pilot.id">
             <td>{{pilot.name}}</td>
             <td>{{pilot.height}}</td>
             <td>{{pilot.gender}}</td>

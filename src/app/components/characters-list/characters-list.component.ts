@@ -13,6 +13,8 @@ export class CharactersListComponent implements OnInit {
   loading = false;
   next: string;
   previous: string;
+  nameOrder: boolean = true;
+  glyph: boolean = true;
 
   constructor(private charactersService: CharactersService) { }
 
@@ -28,11 +30,31 @@ export class CharactersListComponent implements OnInit {
         this.previous = this.charactersService.previous;
         this.loading = false;
         this.characters = data;
+        this.sortCharactersAlphabeticallyByName();
       },
       err => {
         this.characters = [];
       }
     );
+  }
+
+  changeOrderByName() {
+    if(this.nameOrder == true){
+      this.characters.reverse()
+      this.nameOrder = false;
+    }
+    else{
+      this.sortCharactersAlphabeticallyByName();
+      this.nameOrder = true;
+    }
+  }
+
+  sortCharactersAlphabeticallyByName() {
+    this.characters.sort(function (a, b) {
+      if (a.name < b.name) return -1;
+      else if (a.name > b.name) return 1;
+      return 0;
+    });
   }
 
   onNext(): void {
