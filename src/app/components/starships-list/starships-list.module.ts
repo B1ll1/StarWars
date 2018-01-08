@@ -6,6 +6,7 @@ import { SharedPaginationModule } from '../../shared-pagination/shared-paginatio
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { StarshipDetailComponent } from '../starship-detail/starship-detail.component';
+import { NameFilterPipe } from '../../pipes/name-filter.pipe';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { StarshipDetailComponent } from '../starship-detail/starship-detail.comp
   exports: [StarshipsListComponent],
   declarations: [
     StarshipsListComponent,
-    StarshipDetailComponent
+    StarshipDetailComponent,
+    NameFilterPipe
   ],
   providers: [
     StarshipsService

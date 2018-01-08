@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CharactersService } from '../../services/characters.service';
 import { Character } from '../../models/character';
+import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'characters-list',
   templateUrl: './characters-list.component.html',
   styleUrls: ['./characters-list.component.css']
 })
-export class CharactersListComponent implements OnInit {
+export class CharactersListComponent implements OnInit, OnDestroy {
+  subGetAllCharacters: any;
+  subGetCharactersPerPage: any;
 
   characters:Array<Character> = [];
   loading = false;
@@ -22,9 +25,14 @@ export class CharactersListComponent implements OnInit {
     this.callGetAllCharacters();
   }
 
+  ngOnDestroy() {
+    this.subGetAllCharacters.unsubscribe();
+    this.subGetCharactersPerPage.unsubscribe();
+  }
+
   callGetAllCharacters(): void{
     this.loading = true;
-    this.charactersService.getAllCharacters().subscribe( 
+    this.subGetAllCharacters = this.charactersService.getAllCharacters().subscribe( 
       data => {
         this.next = this.charactersService.next;
         this.previous = this.charactersService.previous;
@@ -35,7 +43,7 @@ export class CharactersListComponent implements OnInit {
       err => {
         this.characters = [];
       }
-    );
+    ); 
   }
 
   changeOrderByName() {
@@ -67,7 +75,7 @@ export class CharactersListComponent implements OnInit {
 
   callGetCharactersPerPage(url){
     this.loading = true;
-    this.charactersService.getCharactersPerPage(url).subscribe( 
+    this.subGetCharactersPerPage = this.charactersService.getCharactersPerPage(url).subscribe( 
       data => {
         this.next = this.charactersService.next;
         this.previous = this.charactersService.previous;

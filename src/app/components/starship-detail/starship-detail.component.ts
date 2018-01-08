@@ -19,6 +19,7 @@ export class StarshipDetailComponent implements OnInit, OnDestroy {
   currentPilots: Array<Character> = [];
   loadingStarshipInfo = true;
   loadingPilotsInfo = true;
+  searchInput: string = '';
 
   constructor(
     private starshipsService: StarshipsService,
@@ -59,5 +60,9 @@ export class StarshipDetailComponent implements OnInit, OnDestroy {
       );
     })
     this.loadingPilotsInfo = false;    
+  }
+
+  filterPilotsByName(): void{
+    
   }
 }
